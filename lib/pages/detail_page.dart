@@ -77,8 +77,13 @@ class _DetailPageState extends State<DetailPage> {
               width: _size.width * 0.9,
               height: _size.height * 0.4,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _dressRow(),
+                  const Divider(
+                    color: Colors.brown,
+                    height: 2,
+                  ),
                   _priceRow(),
                 ],
               ),
@@ -128,9 +133,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
                 Text(
                   'One button V-neck sling long-sleeved waist female stitching dress',
-                  style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.grey),
+                  style: TextStyle(fontSize: 13, color: Colors.grey),
                 ),
               ],
             ),
@@ -141,6 +144,33 @@ class _DetailPageState extends State<DetailPage> {
   }
 
   Widget _priceRow() {
-    return Row();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: Text(
+            '6500\$',
+            style: TextStyle(
+              fontSize: 22,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: CircleAvatar(
+            backgroundColor: Colors.brown,
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+                size: 26,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
